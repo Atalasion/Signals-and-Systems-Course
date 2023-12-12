@@ -1,0 +1,12 @@
+function [res] = mycorrcoef(x, y) 
+    summ = x .* y;
+    sumx = x .* x;
+    sumy = y .* y;
+    summ = sum(summ(:));
+    sumx = sum(sumx(:));
+    sumy = sumy(sumy(:));
+    
+    res = summ / sqrt(sumx * sumy);
+
+    
+end

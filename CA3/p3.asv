@@ -1,0 +1,29 @@
+clc
+close all;
+clear;
+[file,path]=uigetfile({'*.jpg;*.bmp;*.png;*.tif'},'Choose an image');
+s=[path,file];
+picture=imread(s);
+old_pic = picture;
+figure
+imshow(picture);
+picture = double(picture);
+mean_val = mean(picture(:));
+std_val = std(picture(:));
+picture = (picture - mean_val) / std_val;
+imshow(picture);
+[file,path]=uigetfile({'*.jpg;*.bmp;*.png;*.tif'},'Choose an image');
+s=[path,file];
+IC = imread(s);
+hold on
+figure
+imshow(IC);
+IC = double(IC);
+mean_val = mean(IC(:));
+std_val = std(IC(:));
+IC = (IC - mean_val) / std_val;
+imshow(IC);
+
+
+
+
